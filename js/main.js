@@ -272,4 +272,63 @@
 
     window.addEventListener("beforeunload", () => clearTimeout(showTimer));
   }
+
+  const contactHours = document.getElementById("contact-hours");
+  const contactHoursWrap = document.querySelector(".contact-hours-wrap");
+  const contactHoursDay = document.getElementById("contact-hours-day");
+  const contactHoursToggle = document.getElementById("contact-hours-toggle");
+
+  if (contactHours && contactHoursWrap) {
+    const today = new Date().getDay();
+    let todayRow = null;
+
+    contactHours.querySelectorAll(".contact-hours__row").forEach((row) => {
+      const weekday = Number(row.dataset.weekday);
+      if (weekday === today) {
+        row.classList.add("is-today");
+        todayRow = row;
+      }
+    });
+
+    if (todayRow && contactHoursDay) {
+      const dayName = todayRow.querySelector(".contact-hours__day")?.textContent?.trim();
+      if (dayName) contactHoursDay.textContent = dayName;
+    }
+
+    const setScheduleExpanded = (expanded) => {
+      contactHoursWrap.classList.toggle("is-expanded", expanded);
+      contactHours.hidden = !expanded;
+      contactHoursToggle?.setAttribute("aria-expanded", String(expanded));
+      if (contactHoursToggle) {
+        contactHoursToggle.textContent = expanded ? "Свернуть" : "Показать всю неделю";
+      }
+    };
+
+    if (!todayRow) {
+      setScheduleExpanded(true);
+    }
+
+    contactHoursToggle?.addEventListener("click", () => {
+      setScheduleExpanded(!contactHoursWrap.classList.contains("is-expanded"));
+    });
+  }
+
+  const contactPhones = document.getElementById("contact-phones");
+  const contactPhonesWrap = document.querySelector(".contact-phones-wrap");
+  const contactPhonesToggle = document.getElementById("contact-phones-toggle");
+
+  if (contactPhones && contactPhonesWrap) {
+    const setPhonesExpanded = (expanded) => {
+      contactPhonesWrap.classList.toggle("is-expanded", expanded);
+      contactPhones.hidden = !expanded;
+      contactPhonesToggle?.setAttribute("aria-expanded", String(expanded));
+      if (contactPhonesToggle) {
+        contactPhonesToggle.textContent = expanded ? "Свернуть" : "Показать все номера";
+      }
+    };
+
+    contactPhonesToggle?.addEventListener("click", () => {
+      setPhonesExpanded(!contactPhonesWrap.classList.contains("is-expanded"));
+    });
+  }
 })();

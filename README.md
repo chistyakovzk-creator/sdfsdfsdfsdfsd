@@ -13,6 +13,23 @@ python3 -m http.server 8080
 
 Сайт: http://localhost:8080
 
+## Публикация для заказчика (бесплатно)
+
+Сайт лежит в GitHub и публикуется через **GitHub Pages** (бесплатный HTTPS-хостинг).
+
+**Адрес после публикации:**
+
+`https://chistyakovzk-creator.github.io/sdfsdfsdfsdfsd/`
+
+**Один раз включить Pages** (если сайт ещё не открывается):
+
+1. Откройте репозиторий: https://github.com/chistyakovzk-creator/sdfsdfsdfsdfsd  
+2. **Settings** → **Pages**  
+3. **Build and deployment** → Source: **GitHub Actions**  
+4. После push в `main` workflow «Deploy to GitHub Pages» сам выложит сайт (1–3 минуты).
+
+Обновление: закоммитьте изменения и выполните `git push origin main`.
+
 ## Изображения
 
 Изображения с официальных сайтов дилеров:
@@ -20,7 +37,7 @@ python3 -m http.server 8080
 - VOYAH: [voyah-autoprodix-spb.ru](https://voyah-autoprodix-spb.ru/) — hero, салон, авто, тест-драйв, иконки
 - EVOLUTE: [evolute-autopark.ru](https://evolute-autopark.ru/) — логотип, i-SPACE, баннеры
 
-Контакты: +7 (8172) 78-62-12, Вологда, Северная 25Б.
+Контакты: ресепшн +7 (8172) 78-62-20, Вологда, Северная 25Б. Полный список телефонов — в `#contacts`.
 
 Референс вашего макета: `assets/hero-reference.png`.
 
