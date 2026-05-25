@@ -21,14 +21,17 @@ python3 -m http.server 8080
 
 `https://chistyakovzk-creator.github.io/sdfsdfsdfsdfsd/`
 
-**Один раз включить Pages** (если сайт ещё не открывается):
+**Один раз включить Pages** (если по ссылке 404):
 
-1. Откройте репозиторий: https://github.com/chistyakovzk-creator/sdfsdfsdfsdfsd  
+1. Репозиторий: https://github.com/chistyakovzk-creator/sdfsdfsdfsdfsd  
 2. **Settings** → **Pages**  
-3. **Build and deployment** → Source: **GitHub Actions**  
-4. После push в `main` workflow «Deploy to GitHub Pages» сам выложит сайт (1–3 минуты).
+3. **Build and deployment** → Source: **Deploy from a branch**  
+4. Branch: **main**, папка **/ (root)** → **Save**  
+5. Подождите 1–3 минуты — появится зелёная ссылка на сайт.
 
-Обновление: закоммитьте изменения и выполните `git push origin main`.
+Альтернатива: Source **GitHub Actions** — тогда сработает workflow `.github/workflows/deploy-pages.yml`.
+
+Обновление на хостинге: `git add -A && git commit -m "..." && git push origin main`.
 
 ## Изображения
 
